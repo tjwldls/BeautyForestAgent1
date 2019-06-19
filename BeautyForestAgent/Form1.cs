@@ -25,5 +25,10 @@ namespace BeautyForestAgent
         {
 
         }
+
+        private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

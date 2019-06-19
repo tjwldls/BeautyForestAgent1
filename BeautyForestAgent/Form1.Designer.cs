@@ -78,19 +78,20 @@
             this.폼보이기ToolStripMenuItem,
             this.종료ToolStripMenuItem});
             this.cmsMenu.Name = "cmsMenu";
-            this.cmsMenu.Size = new System.Drawing.Size(127, 48);
+            this.cmsMenu.Size = new System.Drawing.Size(181, 70);
             // 
             // 폼보이기ToolStripMenuItem
             // 
             this.폼보이기ToolStripMenuItem.Name = "폼보이기ToolStripMenuItem";
-            this.폼보이기ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.폼보이기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.폼보이기ToolStripMenuItem.Text = "폼 보이기";
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.종료ToolStripMenuItem.Text = "종료";
+            this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료ToolStripMenuItem_Click);
             // 
             // ntiTray
             // 
