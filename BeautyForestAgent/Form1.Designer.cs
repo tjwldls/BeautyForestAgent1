@@ -31,16 +31,46 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.NotifyIcon ntiTray;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.폼보이기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnTray = new System.Windows.Forms.Button();
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.폼보이기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ntiTray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.cmsMenu.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ntiTray
+            // 
+            ntiTray.ContextMenuStrip = this.contextMenuStrip1;
+            ntiTray.Icon = ((System.Drawing.Icon)(resources.GetObject("ntiTray.Icon")));
+            ntiTray.Text = "트레이아이";
+            ntiTray.Visible = true;
+            ntiTray.DoubleClick += new System.EventHandler(this.NtiTray_DoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.폼보이기ToolStripMenuItem,
+            this.종료ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            // 
+            // 폼보이기ToolStripMenuItem
+            // 
+            this.폼보이기ToolStripMenuItem.Name = "폼보이기ToolStripMenuItem";
+            this.폼보이기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.폼보이기ToolStripMenuItem.Text = "폼 보이기";
+            this.폼보이기ToolStripMenuItem.Click += new System.EventHandler(this.폼보이기ToolStripMenuItem_Click);
+            // 
+            // 종료ToolStripMenuItem
+            // 
+            this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.종료ToolStripMenuItem.Text = "종료";
+            this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료ToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -52,6 +82,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // label1
             // 
@@ -72,34 +103,6 @@
             this.btnTray.Text = "▼";
             this.btnTray.UseVisualStyleBackColor = true;
             // 
-            // cmsMenu
-            // 
-            this.cmsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.폼보이기ToolStripMenuItem,
-            this.종료ToolStripMenuItem});
-            this.cmsMenu.Name = "cmsMenu";
-            this.cmsMenu.Size = new System.Drawing.Size(181, 70);
-            // 
-            // 폼보이기ToolStripMenuItem
-            // 
-            this.폼보이기ToolStripMenuItem.Name = "폼보이기ToolStripMenuItem";
-            this.폼보이기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.폼보이기ToolStripMenuItem.Text = "폼 보이기";
-            // 
-            // 종료ToolStripMenuItem
-            // 
-            this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.종료ToolStripMenuItem.Text = "종료";
-            this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료ToolStripMenuItem_Click);
-            // 
-            // ntiTray
-            // 
-            ntiTray.ContextMenuStrip = this.cmsMenu;
-            ntiTray.Icon = ((System.Drawing.Icon)(resources.GetObject("ntiTray.Icon")));
-            ntiTray.Text = "트레이아이콘";
-            ntiTray.Visible = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -115,9 +118,10 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Beauty Forest Agent v0.1 by 2109 서지인";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.cmsMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -127,7 +131,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTray;
-        private System.Windows.Forms.ContextMenuStrip cmsMenu;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 폼보이기ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 종료ToolStripMenuItem;
     }
